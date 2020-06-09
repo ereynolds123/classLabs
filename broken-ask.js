@@ -15,11 +15,11 @@ start();
 async function start(){
 
     let myNum= await ask("What is the answer to the ultimate question of life, the universe and everyting? ");
+    
 
 //While the number is not equal to 42, print incorrect message to console
-    while (myNum !==42){
-        myNum = await ask ("Hmmm...  That doesn't seem quite right. Guess again.\n")
-        myNum= parseInt(myNum);
+    while (myNum !=="42"){
+        myNum = await ask ("Hmmm...  That doesn't seem quite right. Guess again.\n") 
     }
 
 //When the answer is correct, print correct message and exit
