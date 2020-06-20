@@ -1,0 +1,25 @@
+body {
+    background-color: purple;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: grey;
+}
+
+#firstSection img{
+    float: left;
+    width: 50vw;
+    margin: 20px;
+}
+
+@media screen and (max-width: 600px){
+    nav{
+        display: flex;
+        flex-direction: column;
+    }
+    firstSection img{
+        float:none;
+    }
+}
