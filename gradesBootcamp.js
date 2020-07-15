@@ -2,7 +2,7 @@
 
 //Function determines the readability score
 function totalReadabilityScore() {
-  let readabilityScore = [4,4]; //Add your readability scores here
+  let readabilityScore = [4,4,3,3, 3]; //Add your readability scores here
   let totalScore = 0;
   for (var i = 0; i < readabilityScore.length; i++) {
     totalScore += readabilityScore[i] / readabilityScore.length;
@@ -14,7 +14,7 @@ function totalReadabilityScore() {
 
 //Function determines the organization score
 function totalOrganizationScore() {
-    let organizationScore = [3,3]; //Add your organization scores here
+    let organizationScore = [3,3, 3, 3, 4]; //Add your organization scores here
     let totalOrganizationScore = 0;
     for (var i = 0; i < organizationScore.length; i++) {
       totalOrganizationScore += organizationScore[i] / organizationScore.length;
@@ -26,7 +26,7 @@ function totalOrganizationScore() {
 
 //Function determines the functionality  score
 function totalFunctionalityScore() {
-    let functionalityScore = [3,3]; //Add your functionality scores here
+    let functionalityScore = [3,3,3,3, 3]; //Add your functionality scores here
     let totalFuncScore = 0;
     for (var i = 0; i < functionalityScore.length; i++) {
       totalFuncScore += functionalityScore[i] / functionalityScore.length;

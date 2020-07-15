@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="display">
+
+    </div>
+    <script>
+        let display = document.getElementById("display");
+        let post =document.location.hash.split("").splice(1).join("") || "1";
+        console.log(document.location.hash)
+
+        fetch("https://jsonplaceholder.typicode.com/posts/"+ post).then(function (response) {
+            let jsonObj = response.json();
+            return jsonObj;
+        }).then(function (json) {
+            console.log(json);
+
+            for (let key in json) {
+                let string = `${key}: ${json[key]}`
+                let item = document.createElement("h3");
+                item.textContent = string;
+                display.appendChild(item);
+            }
+        }).catch((err) => {
+            console.log(err.code, err.message)
+        })
+
+        fetch("")
+    </script>
+</body>
+
+</html>

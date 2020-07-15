@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="posts">
+
+    </div>
+    <script>
+        let posts= document.getElementById("posts")
+        //Grabs from the url, grabs the fragment
+        let posthash= document.location.hash.split("").splice(1).join("");
+        console.log(posthash);
+
+       fetch("https://jsonplaceholder.typicode.com/posts?userId="+ posthash).then(function(response){
+            let json= response.json();
+            return json;
+        }).then(function(json){
+            for (let postObj of json){
+                let title = postObj.title;
+                let item= document.createElement("h3");
+                item.textContent=title;
+                posts.appendChild(item)
+            }
+        }) 
+    </script>
+</body>
+</html>

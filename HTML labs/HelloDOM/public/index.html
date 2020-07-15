@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form id="userForms">
+        Enter name: <input type="text" id="fname">
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById("userForms").onsubmit = function () { addElement() };
+
+        //sanitize user input
+        function capitalize(name) {
+            let firstletter = name.slice(0, 1).toUpperCase();
+            let endOfWord = name.slice(1).toLowerCase();
+            let capitalWord = firstletter + endOfWord;
+            return capitalWord;
+        }
+
+        function addElement() {
+            event.preventDefault();
+            //Targets the user input and capitalizes the name
+            let user = document.getElementById("fname").value;
+            let userResp = capitalize(user);
+            if (userResp === "Darth" || userResp === "Voldemort" || userResp === "Jenny") {
+                // create a new div element 
+                var newDiv = document.createElement("div");
+                // and give it some content 
+                var newContent = document.createTextNode("Go Away " + userResp);
+                // add the text node to the newly created div
+                newDiv.appendChild(newContent);
+
+                // add the newly created element and its content into the DOM 
+                var currentDiv = document.getElementById("div1");
+                document.body.insertBefore(newDiv, currentDiv);
+            } else{ // create a new div element 
+                var newDiv = document.createElement("div");
+                // and give it some content 
+                var newContent = document.createTextNode("Hello " + userResp);
+                // add the text node to the newly created div
+                newDiv.appendChild(newContent);
+
+                // add the newly created element and its content into the DOM 
+                var currentDiv = document.getElementById("div1");
+                document.body.insertBefore(newDiv, currentDiv);
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>

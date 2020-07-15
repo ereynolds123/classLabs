@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Create a Wonderful List</h1>
+    <form id="input">
+        <input id="item" type="text" />
+        <br>
+        <input type="submit" id="submit">
+    </form>
+    <div id="list">
+
+    </div>
+    <script>
+        let inputForm = document.getElementById("input");
+        let list = document.getElementById("list")
+
+        inputForm.addEventListener("submit", () => {
+            event.preventDefault();
+            let item = document.getElementById("item").value
+            let listItem = document.createElement("li");
+            listItem.textContent = item;
+            listItem.addEventListener("click", () => {
+                event.target.style.display = "none"
+            })
+            list.appendChild(listItem);
+            document.getElementById("item").value = ""
+        })
+
+
+
+    </script>
+</body>
+
+</html>

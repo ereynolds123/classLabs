@@ -1,0 +1,6 @@
+{
+    "key": "string", 
+    "number": 42,
+    "george": true,
+    "arr":["string", "thing", "fling", "something else" ]
+}

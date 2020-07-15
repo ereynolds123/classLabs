@@ -1,0 +1,36 @@
+#gridContainer{
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: 1fr 1fr 1fr 1fr 
+
+}
+
+.border{
+    border-right: 1px solid black
+}
+
+
+/* Creates the grid for screens smaller than 720 pixels */
+@media only screen and (max-width: 720){
+    #gridContainer{
+        display: grid;
+        border: 1px solid black;
+
+        /* This should create two columns. Ran out of time to debug */
+        grid-template-columns: 1fr 1fr  
+    
+    }
+}
+
+/* Creates one column for screens less than 360 pixels */
+@media only screen and (max-width: 360){
+    #gridContainer{
+        display: grid;
+        border: 1px solid black;
+
+        /* This should create one column. Ran out of time to debug */
+        grid-template-columns: 1fr 1fr  
+    
+    }
+
+}

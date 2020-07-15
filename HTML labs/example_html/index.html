@@ -13,7 +13,7 @@
     <p id="Hello">Hello World</p>
     <nav>
         <a href="about.html">About</a>
-    <a href="https://google.com">Google</a> </nav>
+        <a href="https://google.com">Google</a> </nav>
     <section id="firstSection">
         <h2><span>Section of Internal Links</span></h2>
 
@@ -27,14 +27,14 @@
         <img src=./gear.png alt="Brass Gear" id="gear">
     </section>
     <section id="sectionTwo">
-    <h2>External Links</h2>
-    <li><a href="google.com">Google</a></li>
+        <h2>External Links</h2>
+        <li><a href="google.com">Google</a></li>
 
-    <li><a href=emilyreynoldsdesigns.com>Emily Reynolds Designs</a></li>
+        <li><a href=emilyreynoldsdesigns.com>Emily Reynolds Designs</a></li>
 
-    <li><a href=burlingtontenantsunion.com>Burlington Tenants Union</a></li>
+        <li><a href=burlingtontenantsunion.com>Burlington Tenants Union</a></li>
 
-    <img src=./covid.jpg alt="Covid-19 crafting session" style="width: 180px">
+        <img src=./covid.jpg alt="Covid-19 crafting session" style="width: 180px">
 
     </section>
     <section id="sectionTwo">
@@ -44,10 +44,25 @@
         <img src=./coffee.jpg alt="Coffee cup" style="width: 180px">
     </section>
     <section class="video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/YcbcfkLzgvs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YcbcfkLzgvs" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div id="display">
+            <button id="write">Click me</button>
+        </div>
     </section>
     <footer id="footer">ⒸEmily Reynolds 2020</footer>
+    <script>
+        let display = document.getElementById("display");
 
+        let write = document.getElementById("write");
+
+        write.addEventListener("click", () => {
+            display.textContent = "This is added by Javascript"
+
+            display.style.color = "red";
+        })
+
+    </script>
 </body>
 
 </html>

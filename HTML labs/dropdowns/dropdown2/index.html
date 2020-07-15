@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu {
+            display: none;
+            list-style: none;
+            flex-direction: column;
+        }
+
+        li {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h3 id="title">Dropdown</h3>
+        <ul id="menu">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+            <li>Fourth</li>
+            <li>Fifth</li>
+            <li>Sixth</li>
+        </ul>
+    </div>
+    <script>
+        let title = document.getElementById("title");
+
+        let menu = document.getElementById("menu");
+
+        let allItems = document.getElementsByTagName("li")
+
+        title.addEventListener("click", () => {
+            if (menu.style.display === "flex"){
+            menu.style.display = "none"
+        }
+            else { menu.style.display = "flex"; }
+        })
+
+
+        
+        for (let item of allItems) {
+            item.addEventListener("click", => {
+                menu.style.display = "none"
+            })
+
+    </script>
+</body>
+
+</html>

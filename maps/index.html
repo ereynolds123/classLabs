@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+</head>
+
+<body>
+    <div id="map" style="height: 400px"></div>
+
+
+    <script>
+        //Sets the cooridnates and zoom level of map
+        let myMap = L.map("map").setView([44, -73], 12);
+
+        OpenStreetMap_Mapnik = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright%22%3EOpenStreetMap</a> contributors', }).addTo(myMap)
+
+        let marker = L.marker([44, -73]);
+        marker.bindPopup("<h4>This is the center</h4>")
+        marker.addTo(myMap)
+        marker.addEventListener("mouseover", () => {
+            marker.openPopup();
+        })
+
+         function placeMarker(address) {
+            let urlAddress = encodeURI(address)
+            
+
+            fetch(`https://nominatim.openstreetmap.org/search?q=${urlAddress}&format=json`)
+            .then((res)=> res.json())
+            .then(json => {
+                //Do all manipulations in second .then
+            let latLonArr= [json[0].lat, json[0].lon];
+            
+         
+            L.marker(latLongArr).addTo(myMap)
+        });
+       
+        }
+        //You can give addresses and it plops markers on the map. Because you put it in a function you can call multiple times
+      placeMarker("Waterbury, Vt");
+      placeMarker("Ripton, Vt")
+    </script>
+</body>
+
+</html>
