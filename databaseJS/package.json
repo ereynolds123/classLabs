@@ -1,0 +1,16 @@
+{
+  "name": "databaseJS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dataStore.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "init": "^0.1.2",
+    "mongodb": "^3.5.9"
+  }
+}
