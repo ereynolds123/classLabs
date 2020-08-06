@@ -98,6 +98,13 @@ async setMany(objArr){
 
     console.log("Deleted" + idArray.length + "documents");
   }
+
+  async clear(){
+    let collection = await this.collection();
+    await this.collection.deleteMany({})
+  }
 }
+
+
 
 module.exports = DataStore;
