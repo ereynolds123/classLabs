@@ -4,33 +4,20 @@
 
 import React from "react";
 import { render } from "react-dom";
-import  Pet  from "./Pet";
+import SearchParams from "./SearchParams.js";
+// import Pet from "./Pet";
+
 
 const App = () => {
-  return React.createElement(
-    "div", //type of element
-    {},
-    [
-      //attributes (id, class)
-      React.createElement("h1", {}, "Adopt Me"), //this is the children
-      React.createElement(Pet, {
-        name: "Patience",
-        animal: "Dog",
-        breed: "Golden Retriever",
-      }),
-      React.createElement(Pet, {
-        name: "Peeper",
-        animal: "Cat",
-        breed: "Siamese",
-      }),
-      React.createElement(Pet, {
-        name: "Percy",
-        animal: "Cat",
-        breed: "Mixed",
-      }),
-    ]
-  );
+
+
+  return (
+      <div>
+          <h1 id="somethingimportant">Adopt me</h1>
+         <SearchParams></SearchParams>
+      </div>
+  )
 };
 
 //When you render, you override anything inside the div. App is a composite element
-render(React.createElement(App), document.getElementById("root"));
+render(<App/>, document.getElementById("root"));
