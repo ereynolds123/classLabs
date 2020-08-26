@@ -10,12 +10,14 @@ const SearchParams=()=>{
   
     useEffect(()=>{
         setBreeds([]);
+        //setBreeds updates the state into an array of breeds which is why you are passing it into useDropdown. You are altering the breeds based on the animal
         setBreed("");
         pet.breeds(animal).then(({breeds})=>{
-            const breedStrings= breed.map(({name})=>name)
+            const breedStrings= breeds.map(({name})=>name)
             setBreeds(breedStrings)
-        })
-    }, [animal, setBreed, setBreeds])
+        }, console.error)
+    }, [animal, setBreed, setBreeds]);
+
 
     return(
         <div className="search-params">
